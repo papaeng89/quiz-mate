@@ -16,17 +16,17 @@ export class ConnectionWarning extends Component {
                                 <Row>
                                     <Col md={12} className="vcenter">
                                         <div className="connection-warning">
-                                            <h1>⚠️ Make sure that your internet connection doesn't drop</h1>
+                                            <h1>⚠️ Assurez-vous que votre connexion Internet ne tombe pas</h1>
                                             <p>
-                                                This browser tab must remain connected to the backend server until the
-                                                quiz concludes. Even brief connection drops can cause the quiz to be
-                                                aborted.
+                                                Cet onglet de navigateur doit rester connecté au serveur principal
+                                                jusqu'à la fin du quiz. Une brève interruption de connexion peut
+                                                entraîner l'abandon du quiz.
                                             </p>
                                             <p>
-                                                Make sure that you have a stable internet connection and always keep
-                                                this browser tab in the foreground. Switching to another tab for too
-                                                long can prompt the browser to put this tab to sleep (and disconnect it
-                                                from the server).
+                                                Assurez-vous d'avoir une connexion Internet stable et gardez toujours
+                                                cet onglet de navigateur au premier plan. Passer d'un onglet à un autre
+                                                pendant trop longtemps peut inciter le navigateur à mettre cet onglet
+                                                en veille (et à le déconnecter du serveur).
                                             </p>
                                             <Button variant="warning"
                                                 onClick={this.props.onConfirmed}
