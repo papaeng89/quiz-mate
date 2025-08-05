@@ -30,7 +30,6 @@ class Question extends Component {
                         <div className="player-question">
                             {this.props.question.question}
                             {this.props.question.imageUrl}
-                            "Coucou"
                         </div>
                     </Col>
                     {question.answers.map((answer, index) => this.answer(answer, index))}
