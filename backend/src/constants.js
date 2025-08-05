@@ -62,4 +62,4 @@ module.exports.MAX_PORT = 65_535;
 //
 // The same size must also be configured in ../../frontend/src/utilities/constants.js
 
-module.exports.MAX_WEB_SOCKET_MESSAGE_SIZE = 1 * 1024 * 1024;
+module.exports.MAX_WEB_SOCKET_MESSAGE_SIZE = 10 * 1024 * 1024;
