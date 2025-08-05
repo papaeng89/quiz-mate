@@ -110,8 +110,9 @@ module.exports.onWebsocketConnect = (io, socket) => {
             roomObj.questionIndex = question.index;
             roomObj.questionStart = Date.now();
         }
-        const { correct, ...playerQuestion } = question;
-        socket.to(roomCode).emit(commands.ANSWERS_OPEN, { ...playerQuestion});
+        //const { correct, ...playerQuestion } = question;
+        socket.to(roomCode).emit(commands.ANSWERS_OPEN, { ...question });
+        //socket.to(roomCode).emit(commands.ANSWERS_OPEN, { ...playerQuestion});
     });
 
     //------------------------------------------------------------------------------------------------------------------
