@@ -62,6 +62,8 @@ class Question extends Component {
                     <br />
                     <Container fluid>
                         {this.props.question ? this.QuestionGrid() : false}
+                        {this.props.question.imageUrl}
+                        
                     </Container>
                 </div>
             </CenterBox>
