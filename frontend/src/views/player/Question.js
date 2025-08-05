@@ -29,11 +29,7 @@ class Question extends Component {
                     <Col xs={12}>
                         <div className="player-question">
                             {this.props.question.question}
-                            {this.props.question.imageUrl && (
-                                <div className="player-image">
-                                    <img src={this.props.question.imageUrl} alt="An image that relates to the question" />
-                                </div>
-                            )}
+
                         </div>
                     </Col>
                     {question.answers.map((answer, index) => this.answer(answer, index))}
