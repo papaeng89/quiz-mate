@@ -27,6 +27,9 @@ class Question extends Component {
             <div>
                 <Row>
                     <Col xs={12}>
+                        <div className="question-image">
+                            <img src={this.props.question.imageUrl} alt="An image that relates to the question" />
+                        </div>
                         <div className="player-question">
                             {question.question}
                         </div>
