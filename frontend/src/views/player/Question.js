@@ -28,10 +28,12 @@ class Question extends Component {
                 <Row>
                     <Col xs={12}>
                         <div className="player-question">
-                            {question.question}
-                            <div className="player-image">
-                                <img src={this.props.question.imageUrl} alt="An image that relates to the question" />
-                            </div>
+                            {this.props.question.question}
+                            {this.props.question.imageUrl && (
+                                <div className="player-image">
+                                    <img src={this.props.question.imageUrl} alt="An image that relates to the question" />
+                                </div>
+                            )}
                         </div>
                     </Col>
                     {question.answers.map((answer, index) => this.answer(answer, index))}
@@ -63,7 +65,7 @@ class Question extends Component {
                     )}
                     <br />
                     <Container fluid>
-                        {this.props.question ? this.QuestionGrid() : false}
+                        {this.QuestionGrid()}
                     </Container>
                 </div>
             </CenterBox>
