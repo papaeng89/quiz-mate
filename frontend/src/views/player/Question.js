@@ -65,7 +65,7 @@ class Question extends Component {
                     )}
                     <br />
                     <Container fluid>
-                        {this.props.question ? this.QuestionGrid() : false}
+                        {this.props.question ? this.QuestionGrid() : true}
                                                 
                     </Container>
                 </div>
