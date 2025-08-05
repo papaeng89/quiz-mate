@@ -132,7 +132,7 @@ class Editor extends Component {
         this.setState({ downloadModal: false, downloadModalMessage: undefined });
         let name = this.state.originalName;
         if (name === "") {
-            name = prompt("Enter the project name or leave the field empty:");
+            name = prompt("Entrez le nom du projet ou laissez le champ vide:");
             if (name === '') {
                 name = 'questions.json';
             } else {
@@ -348,10 +348,10 @@ class Editor extends Component {
 
                 <Modal show={this.state.exitModal} onHide={this.hideExitModal}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Unsaved changes</Modal.Title>
+                        <Modal.Title>Modifications non enregistrées</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <p>Do you want to exit without saving your changes?</p>
+                        <p>Voulez-vous quitter sans enregistrer vos modifications?</p>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="danger" onClick={this.navigateToStartPage}>Yes, discard changes</Button>
@@ -366,7 +366,7 @@ class Editor extends Component {
                         <Modal.Title>Confirm</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <p>Do you want to delete this question?</p>
+                        <p>Voulez-vous supprimer cette question?</p>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="danger" onClick={this.deleteQuestionWithoutConfirmation}>Yes</Button>
@@ -381,7 +381,7 @@ class Editor extends Component {
                         <Modal.Title>Unsaved changes</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <p>Do you want to open this quiz without saving your previous changes?</p>
+                        <p>Voulez-vous ouvrir ce quiz sans enregistrer vos modifications précédentes?</p>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="danger" onClick={this.loadProject}>Yes, discard changes</Button>
