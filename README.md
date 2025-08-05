@@ -1,6 +1,6 @@
 # Quiz Mate
 
-A lightweight self-hosted quiz engine to run interactive real-time quizzes in the browser. This project is a fork of [Quizario](https://github.com/adan2013/Quizario) by Daniel Alberski.
+Un moteur de quiz auto-hébergé léger pour exécuter des quiz interactifs en temps réel dans le navigateur. Ce projet est un fork de [Quiz Mate](https://github.com/david-04/quiz-mate) de David-04 qui basé sur [Quizario](https://github.com/adan2013/Quizario) de Daniel Alberski.
 
 ![](docs/screenshots/2025-04-20/quiz-mate.png)
 
