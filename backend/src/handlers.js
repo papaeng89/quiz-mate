@@ -112,7 +112,7 @@ module.exports.onWebsocketConnect = (io, socket) => {
         }
         //const { correct, ...playerQuestion } = question;
         log(roomCode, question);
-        socket.to(roomCode).emit(commands.ANSWERS_OPEN, { question });
+        socket.to(roomCode).emit(commands.ANSWERS_OPEN, { ...question });
         //socket.to(roomCode).emit(commands.ANSWERS_OPEN, { ...playerQuestion});
     });
 
