@@ -136,9 +136,9 @@ class QuestionEditor extends Component {
                 )}
                 {question.imageUrl && (
                     <div className="aspect-ratio-indicator-advice">
-                        The recommended image size is 1215 x 355 pixels. This aspect ratio (as indicated by the red
-                        frame) works well on 16:9 screens with the browser in full-screen mode. As a rule of thumb,
-                        wider images (even wider than 1215:355) work better across different screen sizes.
+                        La taille d'image recommandée est de 1215 x 355 pixels. Ce format (indiqué par le cadre
+                        rouge) fonctionne bien sur les écrans 16:9 avec le navigateur en mode plein écran. En règle générale,
+                        les images plus larges (même supérieures à 1215:355) fonctionnent mieux sur différentes tailles d'écran.
                     </div>
                 )}
             </Row>
@@ -168,9 +168,9 @@ class QuestionEditor extends Component {
                 <div style={{ margin: '40px auto 0 0', textAlign: "left", fontSize: "1.2rem" }}>
                     <p>Use this editor to create or modify a quiz:</p>
                     <ul>
-                        <li>Upload a quiz (if you have one)</li>
-                        <li>Use the buttons above to add/order/remove questions</li>
-                        <li>Switch between questions on the left-hand side</li>
+                        <li>Téléchargez un quiz (si vous en avez un)</li>
+                        <li>Utilisez les boutons ci-dessus pour ajouter/commander/supprimer des questions</li>
+                        <li>Basculer entre les questions sur le côté gauche</li>
                         <li><span style={{ color: "red" }} >Download the quiz when finished</span></li>
                     </ul>
                     <div style={{ marginTop: "1.25em" }}>
