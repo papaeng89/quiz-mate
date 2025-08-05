@@ -17,4 +17,4 @@ export const ROOM_CODE_MAX = 999_999;
 //
 // The same size must also be configured in ../../backend/src/constants.js
 
-export const MAX_WEB_SOCKET_MESSAGE_SIZE = 1 * 1024 * 1024;
+export const MAX_WEB_SOCKET_MESSAGE_SIZE = 10 * 1024 * 1024;
