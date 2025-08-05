@@ -108,8 +108,9 @@ class Host extends Component {
             this.props.switchState(V_QUESTION);
             if (0 <= index) {
                 // don't send the image to the server
-                const { imageUrl, ...question } = this.state.questions[index];
-                this.socket.emit(newQuestion, this.props.game.hostingRoom.roomCode, { index, ...question });
+                // const { imageUrl, ...question } = this.state.questions[index];
+                // this.socket.emit(newQuestion, this.props.game.hostingRoom.roomCode, { index, ...question });
+                this.socket.emit(newQuestion, this.props.game.hostingRoom.roomCode, { index, ...this.state.questions[index] });
             }
         });
     }
