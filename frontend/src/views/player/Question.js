@@ -27,11 +27,11 @@ class Question extends Component {
             <div>
                 <Row>
                     <Col xs={12}>
-                        <div className="question-image">
-                            <img src={this.props.question.imageUrl} alt="An image that relates to the question" />
-                        </div>
                         <div className="player-question">
                             {question.question}
+                        </div>
+                        <div className="player-image">
+                            <img src={this.props.question.imageUrl} alt="An image that relates to the question" />
                         </div>
                     </Col>
                     {question.answers.map((answer, index) => this.answer(answer, index))}
@@ -56,7 +56,7 @@ class Question extends Component {
 
     render() {
         return (
-            <CenterBox logo cancel="Exit" {...this.props}>
+            <CenterBox logo cancel="Quitter" {...this.props}>
                 <div className="message-box">
                     {this.props.game.hostingRoom.timeLimit > 0 && (
                         <RemoteTimer seconds={this.props.timer} />
