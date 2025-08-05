@@ -4,46 +4,46 @@ Un moteur de quiz auto-hébergé léger pour exécuter des quiz interactifs en t
 
 ![](docs/screenshots/2025-04-20/quiz-mate.png)
 
-For more screenshots and a full walk-through, please scroll down to the bottom of this page.
+Pour plus de captures d'écran et une présentation complète, veuillez faire défiler vers le bas de cette page.
 
 ## Overview
 
-The Quiz Mate provides an easy way to run multiple-choice quizzes in meetings and video conferences. The host activates the questions one by one. While a question is active, the players can submit guesses in their browsers. The host can then reveal the right answer, display answer statistics, and show the leaderboard, before moving on to the next question.
+Quiz Mate permet d'organiser facilement des quiz à choix multiples lors de réunions et de visioconférences. L'hôte active les questions une par une. Lorsqu'une question est active, les joueurs peuvent soumettre leurs réponses dans leur navigateur. L'hôte peut ensuite révéler la bonne réponse, afficher les statistiques et le classement, avant de passer à la question suivante.
 
 ## Features
 
-- Self-contained application (includes the web server and the frontend, no database required)
-- Easy to run locally (requires only Node.js) or in Docker
-- Real-time interaction between the host and the players (using web sockets)
-- Supports multiple-choice questions with up to 4 answers
-- Each question can include an image (displayed on the host screen only)
-- Quizzes are stored locally/offline in `JSON` format
-- Timer and shuffle options, answer statistics, leaderboard, and easy joining via QR code
-- No user management or authentication required (everyone with a link can host and join quizzes)
-- Supports HTTP and HTTPS
-
+- Application autonome (incluant le serveur web et l'interface utilisateur, aucune base de données requise)
+- Facile à exécuter localement (nécessite uniquement Node.js) ou dans Docker
+- Interaction en temps réel entre l'hôte et les joueurs (via des web sockets)
+- Prise en charge des questions à choix multiples avec jusqu'à 4 réponses
+- Chaque question peut inclure une image (affichée sur l'écran de l'hôte et celui du joueur)
+- Les quiz sont stockés localement/hors ligne au format « JSON »
+- Options de chronométrage et de lecture aléatoire, statistiques des réponses, classement et inscription facile via QR code
+- Aucune gestion ni authentification des utilisateurs requise (toute personne disposant d'un lien peut héberger et rejoindre les quiz)
+- Compatible HTTP et HTTPS
+  
 ## Development
 
-The documentation below is for users who want to run the application and host quizzes. If you are a developer seeking to make code changes, refer to [DEVELOPMENT.md](https://github.com/david-04/quiz-mate/blob/main/DEVELOPMENT.md) instead.
+La documentation ci-dessous est destinée aux utilisateurs souhaitant exécuter l'application et héberger des quiz. Si vous êtes développeur et souhaitez apporter des modifications au code, consultez [DEVELOPMENT.md](https://github.com/papaeng89/quiz-mate/blob/main/DEVELOPMENT.md) instead.
 
 ## Installation and usage (locally without Docker)
 
-The Quiz Mate can be run directly (without installing it permanently) using `npx`:
+Le Quiz Mate peut être exécuté directement (sans l'installer définitivement) en utilisant `npx` :
 
 ```sh
 npx --yes quiz-mate
 ```
 
-`npx` automatically downloads the application to a temporary directory and runs it from there. For use cases beyond trying it out, install the application in the current working directory and run it from there:
+`npx` télécharge automatiquement l'application dans un répertoire temporaire et l'exécute depuis celui-ci. Pour des cas d'utilisation autres que l'essai, installez l'application dans le répertoire de travail actuel et exécutez-la depuis celui-ci :
 
 ```sh
 npm install quiz-mate
 npx quiz-mate
 ```
 
-When started for the first time, a configuration file is created. It's named `quiz-mate.cfg` and contains settings like the HTTP port. Review the generated file and adjust the settings if and as required. On UNIX systems, all ports below `1024` are privileged. Either run the Quiz Mate as a superuser (via `sudo`) or use a non-standard port (e.g., `8080`).
+Au premier démarrage, un fichier de configuration est créé. Il s'appelle « quiz-mate.cfg » et contient des paramètres tels que le port HTTP. Vérifiez le fichier généré et ajustez les paramètres si nécessaire. Sur les systèmes UNIX, tous les ports inférieurs à « 1024 » sont privilégiés. Exécutez Quiz Mate en tant que superutilisateur (via « sudo ») ou utilisez un port non standard (par exemple, « 8080 »).
 
-After reviewing the configuration, start the Quiz Mate again. Once the server is up and running, the web frontend can be accessed in the browser:
+Après avoir vérifié la configuration, redémarrez Quiz Mate. Une fois le serveur opérationnel, l'interface web est accessible depuis votre navigateur :
 
 ```sh
 # when using port 80
@@ -53,9 +53,9 @@ http://localhost/
 http://localhost:8080/
 ```
 
-When running the Quiz Mate on a local computer, incoming connections are usually blocked by default. To let others access the web server over the internet, open the respective port(s) in the router's and/or operating system's firewall(s).
+Lorsque vous exécutez Quiz Mate sur un ordinateur local, les connexions entrantes sont généralement bloquées par défaut. Pour permettre à d'autres utilisateurs d'accéder au serveur web via Internet, ouvrez le(s) port(s) correspondant(s) dans le(s) pare-feu du routeur et/ou du système d'exploitation.
 
-Please also review the _"Limitations and operational constraints"_ section below. It highlights some important pitfalls to be aware of.
+Veuillez également consulter la section « Limites et contraintes opérationnelles » ci-dessous. Elle met en évidence certains pièges importants à prendre en compte.
 
 ## Installation and usage (Docker)
 
