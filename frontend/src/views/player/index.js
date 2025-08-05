@@ -75,7 +75,7 @@ class Player extends Component {
                     timerValue: this.props.game.hostingRoom.timeLimit
                 });
                 this.props.switchState(V_QUESTION);
-            });
+            },imageURL);
 
             this.socket.on(answersClose, question => {
                 this.setState({ question: question, correctAnswer: question.correct });
