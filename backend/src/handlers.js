@@ -111,6 +111,7 @@ module.exports.onWebsocketConnect = (io, socket) => {
             roomObj.questionStart = Date.now();
         }
         const { correct, ...playerQuestion } = question;
+        log(roomCode, ...playerQuestion);
         socket.to(roomCode).emit(commands.ANSWERS_OPEN, { ...playerQuestion});
     });
 
@@ -119,7 +120,7 @@ module.exports.onWebsocketConnect = (io, socket) => {
     //------------------------------------------------------------------------------------------------------------------
 
     socket.on(commands.CLOSE_QUESTION, (roomCode, question) => {
-        log(roomCode, "The host ended the current question");
+        log(roomCode, "The host ended the current question");        
         socket.to(roomCode).emit(commands.ANSWERS_CLOSE, question);
     });
 
