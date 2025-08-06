@@ -43,13 +43,13 @@ export function validateQuiz(quiz) {
 
 function validateTitle(quiz) {
     if (!Object.prototype.hasOwnProperty.call(quiz, "title")) {
-        fail("The quiz has no title");
+        fail("Le quiz n'a pas de titre");
     }
     if ("string" !== typeof quiz.title) {
-        fail(`The title has a wrong data type (${typeof quiz.title} instead of string)`);
+        fail(`Le titre a un type de données incorrect (${typeof quiz.title} au lieu de caractères)`);
     }
     if (!quiz.title.trim()) {
-        fail("The title is empty");
+        fail("Le titre est vide");
     }
 }
 
@@ -59,13 +59,13 @@ function validateTitle(quiz) {
 
 function validateQuestions(quiz) {
     if (!Object.prototype.hasOwnProperty.call(quiz, "questions")) {
-        fail("The quiz has no questions");
+        fail("Le quiz n'a pas de question");
     }
     if (!Array.isArray(quiz.questions)) {
-        fail("The questions are not an array");
+        fail("Les questions ne sont pas un tableau");
     }
     if (!quiz.questions.length) {
-        fail("The quiz does not contain any questions");
+        fail("Le quiz ne contient aucune question");
     }
     quiz.questions.forEach(validateQuestion);
 }
@@ -78,13 +78,13 @@ function validateQuestion(question, index) {
     const questionNumber = toOrdinal(index);
 
     if (!question || "object" !== typeof question || Array.isArray(question)) {
-        fail(`The ${questionNumber} question has an invalid format (it's not an object)`);
+        fail(`La question ${questionNumber} a un format invalide (ce n est pas un objet)`);
     }
     const questionReference = "string" === typeof question.question && question.question.trim()
         ? `question "${question.question.trim()}"`
         : `the ${questionNumber} question`;
     if ("string" !== typeof question.question || !question.question.trim()) {
-        fail(`${capitalize(questionReference)} has no question text`);
+        fail(`${capitalize(questionReference)} n est pas une question avec du texte`);
     }
     validateAnswers(questionReference, question.answers);
     validateCorrect(questionReference, question);
@@ -96,7 +96,7 @@ function validateQuestion(question, index) {
 
 function validateAnswers(questionReference, answers) {
     if (!answers || (Array.isArray(answers) && !answers.length)) {
-        fail(`${capitalize(questionReference)} has no answers`);
+        fail(`${capitalize(questionReference)} n a pas de réponse`);
     }
     if (!Array.isArray(answers)) {
         fail(`The answers for ${questionReference} have an invalid type (${typeof answers} instead of array)`);
