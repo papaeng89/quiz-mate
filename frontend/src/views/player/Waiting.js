@@ -22,8 +22,8 @@ class Waiting extends Component {
                                 alt="Correct answer"
                             />
                             <div className="message-box">
-                                <p>You are right.</p>
-                                <p>Congratulations!</p>
+                                <p>Vous avez raison.</p>
+                                <p>Félicitations!</p>
                             </div>
                         </CenterBox>
                     );
@@ -37,8 +37,8 @@ class Waiting extends Component {
                                 alt="Wrong answer"
                             />
                             <div className="message-box">
-                                <p>No points this time around.</p>
-                                <p>The right answer is:</p>
+                                <p>Aucun point cette fois-ci.</p>
+                                <p>La bonne réponse est :</p>
                                 <p>{this.props.question.answers[this.props.question.correct]}</p>
                             </div>
                         </CenterBox>
@@ -54,10 +54,10 @@ class Waiting extends Component {
                             alt="Waiting"
                         />
                         <div className="message-box">
-                            <p>You have selected</p>
+                            <p>Vous avez sélectionné</p>
                             <p>"{this.props.question.answers[this.props.selectedAnswer]}"</p>
                             <br />
-                            <p>Waiting for the host to<br />reveal the right answer...</p>
+                            <p>En attendant que l hôte<br />révèle la bonne réponse......</p>
                         </div>
                     </CenterBox>
                 );
@@ -66,12 +66,12 @@ class Waiting extends Component {
             const joinMessage = this.props.game.hostingRoom.title
                 ? (
                     <div>
-                        <p>You have joined</p>
+                        <p>Vous avez rejoint</p>
                         <p>"{this.props.game.hostingRoom.title.trim()}"</p>
                     </div>
                 )
                 : (
-                    <p>You have joined the quiz.</p>
+                    <p>Vous avez rejoint le quiz.</p>
                 );
             return (
                 <CenterBox logo cancel="Exit" {...this.props}>
@@ -83,7 +83,7 @@ class Waiting extends Component {
                     />
                     <div className="message-box">
                         {joinMessage}
-                        <p>Waiting for the next question...</p>
+                        <p>En attendant la prochaine question...</p>
                     </div>
                 </CenterBox>
             );
