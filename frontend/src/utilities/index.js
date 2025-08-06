@@ -92,15 +92,15 @@ let hasInstalledOnBeforeUnloadListener = false;
 export function onHostStartGame(title) {
     document.title = title || "Quiz Mate";
     beforeUnloadWarning = [
-        "You are you sure you want to exit?",
-        "This will abort the quiz you're currently hosting.",
-        "You won't be able to re-join as the host."
+        "Êtes-vous sûr de vouloir quitter ?",
+        "Cela annulera le quiz que vous hébergez actuellement.",
+        "Vous ne pourrez pas rejoindre à nouveau en tant qu'hôte."
     ].join(" ");
 }
 
 export function onPlayerJoinGame(title) {
     document.title = title || "Quiz Mate";
-    beforeUnloadWarning = "Are you sure you want to exit the the quiz?";
+    beforeUnloadWarning = "Êtes-vous sûr de vouloir quitter le quiz ?";
 }
 
 export function onExitGame() {
